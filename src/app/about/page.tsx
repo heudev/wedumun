@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import organizationData from '@/data/organization.json';
 import eventsData from '@/data/events.json';
 
@@ -145,18 +146,18 @@ export default function About() {
                         Be part of our growing community and help shape the future of international diplomacy.
                     </p>
                     <div className="space-x-4">
-                        <a
+                        <Link
                             href="/events"
                             className="inline-block bg-white text-[#2A535A] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
                         >
                             View Events
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/contact"
                             className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#2A535A] font-semibold py-3 px-8 rounded-lg transition-all duration-200"
                         >
                             Get in Touch
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
