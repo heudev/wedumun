@@ -1,0 +1,100 @@
+{
+    "organization": {
+        "name": "Western European Diplomatic United Nations",
+        "shortName": "WEDUMUN",
+        "founded": "2020",
+        "description": "WEDUMUN is a leading Model United Nations organization dedicated to fostering diplomatic skills, international understanding, and global citizenship among young people."
+    },
+    "vision": {
+        "title": "Our Vision",
+        "content": "To create a platform where young minds can engage with global issues, develop diplomatic skills, and build lasting international friendships while working towards solutions for a better world."
+    },
+    "mission": {
+        "title": "Our Mission",
+        "content": "We strive to provide high-quality Model United Nations experiences that educate, inspire, and empower delegates to become future leaders in international relations and global governance."
+    },
+    "values": [
+        {
+            "title": "Diplomacy",
+            "description": "We believe in the power of dialogue and peaceful resolution of conflicts."
+        },
+        {
+            "title": "Excellence",
+            "description": "We maintain the highest standards in all our conferences and activities."
+        },
+        {
+            "title": "Diversity",
+            "description": "We celebrate and welcome participants from all backgrounds and cultures."
+        },
+        {
+            "title": "Leadership",
+            "description": "We nurture the next generation of global leaders and changemakers."
+        }
+    ],
+    "team": [
+        {
+            "name": "Emma Thompson",
+            "position": "Secretary-General",
+            "bio": "Emma is a final-year International Relations student with extensive MUN experience across Europe.",
+            "image": "/team/emma.jpg",
+            "linkedin": "https://linkedin.com/in/emmathompson",
+            "email": "emma@wedumun.org"
+        },
+        {
+            "name": "Alexander Petrov",
+            "position": "Deputy Secretary-General",
+            "bio": "Alexander brings expertise in crisis management and has chaired numerous international conferences.",
+            "image": "/team/alexander.jpg",
+            "linkedin": "https://linkedin.com/in/alexanderpetrov",
+            "email": "alexander@wedumun.org"
+        },
+        {
+            "name": "Sofia Martinez",
+            "position": "Director of Operations",
+            "bio": "Sofia oversees the logistical aspects of our conferences and ensures smooth operations.",
+            "image": "/team/sofia.jpg",
+            "linkedin": "https://linkedin.com/in/sofiamartinez",
+            "email": "sofia@wedumun.org"
+        },
+        {
+            "name": "James Wilson",
+            "position": "Academic Director",
+            "bio": "James designs our academic programs and ensures the educational quality of our conferences.",
+            "image": "/team/james.jpg",
+            "linkedin": "https://linkedin.com/in/jameswilson",
+            "email": "james@wedumun.org"
+        },
+        {
+            "name": "Priya Sharma",
+            "position": "Marketing Director",
+            "bio": "Priya leads our outreach efforts and manages our digital presence across platforms.",
+            "image": "/team/priya.jpg",
+            "linkedin": "https://linkedin.com/in/priyasharma",
+            "email": "priya@wedumun.org"
+        },
+        {
+            "name": "Lucas Brown",
+            "position": "Technology Director",
+            "bio": "Lucas manages our digital infrastructure and develops innovative solutions for virtual participation.",
+            "image": "/team/lucas.jpg",
+            "linkedin": "https://linkedin.com/in/lucasbrown",
+            "email": "lucas@wedumun.org"
+        }
+    ],
+    "contact": {
+        "email": "info@wedumun.org",
+        "phone": "+90 212 555 0123",
+        "address": {
+            "street": "Diplomacy Avenue 123",
+            "city": "Istanbul",
+            "country": "Turkey",
+            "postal": "34000"
+        },
+        "social": {
+            "linkedin": "https://linkedin.com/company/wedumun",
+            "twitter": "https://twitter.com/wedumun",
+            "instagram": "https://instagram.com/wedumun",
+            "facebook": "https://facebook.com/wedumun"
+        }
+    }
+}
