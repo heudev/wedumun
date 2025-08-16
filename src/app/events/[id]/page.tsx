@@ -3,14 +3,15 @@ import Link from 'next/link';
 import eventsData from '@/data/events.json';
 
 interface EventPageProps {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
-export default function EventPage({ params }: EventPageProps) {
+export default async function EventPage({ params }: EventPageProps) {
+    const { id } = await params;
     const { events } = eventsData;
-    const event = events.find(e => e.id === params.id);
+    const event = events.find(e => e.id === id);
 
     if (!event) {
         notFound();
