@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-2">
                         <h3 className="text-2xl font-bold mb-4">WEDUMUN</h3>
                         <p className="text-gray-300 mb-4">
-                            Western European Diplomatic United Nations - Empowering young minds through Model UN experiences.
+                            World - Educational Simulation of Diplomacy and Leadership Model United Nations
                         </p>
                         <div className="flex space-x-4">
                             <a href="https://linkedin.com/company/wedumun" className="text-gray-300 hover:text-white transition-colors">
