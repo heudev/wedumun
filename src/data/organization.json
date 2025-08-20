@@ -7,7 +7,7 @@
     },
     "vision": {
         "title": "Our Vision",
-        "content": "To create a platform where young minds can engage with global issues, develop diplomatic skills, and build lasting international friendships while working towards solutions for a better world."
+        "content": "We aspire to ensure that the contributions of international organizations and alliances to global peace and stability are fully understood by younger generations. By fostering awareness and providing education, we seek to prepare the leaders and diplomats of tomorrow who will play a pivotal role in shaping a secure and equitable world order. One of our core missions is to deepen the understanding of the significance of international organizations, such as the United Nations and NATO, and their indispensable roles in addressing global challenges. Unfortunately, the importance of these institutions is often underappreciated by the younger population today. To address this gap, we have dedicated ourselves to raising awareness of the critical vision, objectives, and achievements of these organizations.Through our initiatives, we aim to inspire and equip young minds with the knowledge, skills, and passion necessary to contribute meaningfully to international diplomacy and cooperation. By doing so, we strive to build a generation that values multilateralism and is committed to advancing global peace and harmony."
     },
     "mission": {
         "title": "Our Mission",
@@ -31,7 +31,108 @@
             "description": "We nurture the next generation of global leaders and changemakers."
         }
     ],
+    "teamStructure": {
+        "executive": [
+            {
+                "name": "David Richardson",
+                "position": "President",
+                "image": "/team/david.jpg",
+                "linkedin": "https://linkedin.com/in/davidrichardson",
+                "email": "president@wedumun.org",
+                "letter": "Dear Delegates and Participants,\n\nAs President of WEDUMUN, I am honored to welcome you to our growing community of young diplomats and future leaders. Our organization stands as a beacon of hope in fostering international understanding and peaceful dialogue among the youth of today.\n\nSince our founding in 2020, WEDUMUN has been committed to providing exceptional Model United Nations experiences that transcend cultural boundaries and inspire meaningful change. We believe that through diplomatic engagement, critical thinking, and collaborative problem-solving, we can prepare the next generation to tackle the complex challenges facing our interconnected world.\n\nOur vision extends beyond mere simulation of diplomatic processes. We strive to cultivate genuine understanding of international relations, global governance, and the vital role that multilateral institutions play in maintaining peace and stability. In an era where international cooperation is more crucial than ever, we are proud to contribute to the development of young minds who will shape the future of diplomacy.\n\nI invite you to join us in this transformative journey, where every voice matters and every perspective contributes to our collective wisdom.\n\nWith warm regards,\nDavid Richardson\nPresident, WEDUMUN"
+            },
+            {
+                "name": "Emma Thompson",
+                "position": "Secretary-General",
+                "image": "/team/emma.jpg",
+                "linkedin": "https://linkedin.com/in/emmathompson",
+                "email": "emma@wedumun.org"
+            },
+            {
+                "name": "Alexander Petrov",
+                "position": "Deputy Secretary-General",
+                "image": "/team/alexander.jpg",
+                "linkedin": "https://linkedin.com/in/alexanderpetrov",
+                "email": "alexander@wedumun.org"
+            }
+        ],
+        "organizationStaff": [
+            {
+                "name": "Sofia Martinez",
+                "position": "Director of Operations",
+                "image": "/team/sofia.jpg",
+                "linkedin": "https://linkedin.com/in/sofiamartinez",
+                "email": "sofia@wedumun.org"
+            },
+            {
+                "name": "Priya Sharma",
+                "position": "Marketing Director",
+                "image": "/team/priya.jpg",
+                "linkedin": "https://linkedin.com/in/priyasharma",
+                "email": "priya@wedumun.org"
+            },
+            {
+                "name": "Lucas Brown",
+                "position": "Technology Director",
+                "image": "/team/lucas.jpg",
+                "linkedin": "https://linkedin.com/in/lucasbrown",
+                "email": "lucas@wedumun.org"
+            },
+            {
+                "name": "Maria Garcia",
+                "position": "Finance Director",
+                "image": "/team/maria.jpg",
+                "linkedin": "https://linkedin.com/in/mariagarcia",
+                "email": "maria@wedumun.org"
+            },
+            {
+                "name": "Thomas Mueller",
+                "position": "Events Coordinator",
+                "image": "/team/thomas.jpg",
+                "linkedin": "https://linkedin.com/in/thomasmueller",
+                "email": "thomas@wedumun.org"
+            }
+        ],
+        "academicTeam": [
+            {
+                "name": "James Wilson",
+                "position": "Academic Director",
+                "image": "/team/james.jpg",
+                "linkedin": "https://linkedin.com/in/jameswilson",
+                "email": "james@wedumun.org"
+            },
+            {
+                "name": "Dr. Sarah Chen",
+                "position": "Research Coordinator",
+                "image": "/team/sarah.jpg",
+                "linkedin": "https://linkedin.com/in/sarahchen",
+                "email": "sarah@wedumun.org"
+            },
+            {
+                "name": "Michael Kumar",
+                "position": "Education Specialist",
+                "image": "/team/michael.jpg",
+                "linkedin": "https://linkedin.com/in/michaelkumar",
+                "email": "michael@wedumun.org"
+            },
+            {
+                "name": "Anna Kowalski",
+                "position": "Training Coordinator",
+                "image": "/team/anna.jpg",
+                "linkedin": "https://linkedin.com/in/annakowalski",
+                "email": "anna@wedumun.org"
+            }
+        ]
+    },
     "team": [
+        {
+            "name": "David Richardson",
+            "position": "President",
+            "bio": "David is the visionary leader of WEDUMUN, committed to fostering international understanding through diplomatic education.",
+            "image": "/team/david.jpg",
+            "linkedin": "https://linkedin.com/in/davidrichardson",
+            "email": "president@wedumun.org"
+        },
         {
             "name": "Emma Thompson",
             "position": "Secretary-General",
@@ -71,14 +172,6 @@
             "image": "/team/priya.jpg",
             "linkedin": "https://linkedin.com/in/priyasharma",
             "email": "priya@wedumun.org"
-        },
-        {
-            "name": "Lucas Brown",
-            "position": "Technology Director",
-            "bio": "Lucas manages our digital infrastructure and develops innovative solutions for virtual participation.",
-            "image": "/team/lucas.jpg",
-            "linkedin": "https://linkedin.com/in/lucasbrown",
-            "email": "lucas@wedumun.org"
         }
     ],
     "contact": {

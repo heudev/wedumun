@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import eventsData from '@/data/events.json';
+import { formatDateRange } from '@/utils/dateUtils';
 
 interface EventPageProps {
     params: Promise<{
@@ -32,15 +33,7 @@ export default async function EventPage({ params }: EventPageProps) {
                                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
-                                {new Date(event.date).toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })} - {new Date(event.endDate).toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })}
+                                {formatDateRange(event.date, event.endDate)}
                             </div>
                             <div className="flex items-center text-lg">
                                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +80,7 @@ export default async function EventPage({ params }: EventPageProps) {
                                         </svg>
                                         <div>
                                             <strong>Duration:</strong><br />
-                                            {new Date(event.date).toLocaleDateString()} - {new Date(event.endDate).toLocaleDateString()}
+                                            {formatDateRange(event.date, event.endDate)}
                                         </div>
                                     </li>
                                     <li className="flex items-start">

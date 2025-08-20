@@ -3,7 +3,7 @@ import organizationData from '@/data/organization.json';
 import eventsData from '@/data/events.json';
 
 export default function About() {
-    const { organization, vision, mission, values } = organizationData;
+    const { vision } = organizationData;
     const { pastEvents } = eventsData;
 
     return (
@@ -12,9 +12,9 @@ export default function About() {
             <section className="bg-gradient-to-br from-[#2A535A] to-[#23484E] text-white py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">About WEDUMUN</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6">What is WEDUMUN?</h1>
                         <p className="text-xl max-w-3xl mx-auto">
-                            Learn about our organization, vision, and the journey that has made us a leading force in Model United Nations.
+                            Learn about our organization, vision, and the journey that brought us here.
                         </p>
                     </div>
                 </div>
@@ -22,47 +22,33 @@ export default function About() {
 
             {/* Our Organization Section */}
             <section id="organization" className="py-16 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                                Our Organization
-                            </h2>
-                            <div className="space-y-4">
-                                <p className="text-lg text-gray-600">
-                                    {organization.description}
-                                </p>
-                                <div className="grid grid-cols-2 gap-4 mt-8">
-                                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                        <div className="text-2xl font-bold text-[#2A535A]">Founded</div>
-                                        <div className="text-gray-600">{organization.founded}</div>
-                                    </div>
-                                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                        <div className="text-2xl font-bold text-[#2A535A]">Focus</div>
-                                        <div className="text-gray-600">Model UN</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="lg:order-first">
-                            <div className="h-64 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg"></div>
-                        </div>
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                        WEDUMUN Organization
+                    </h2>
+                    <div className="space-y-6 text-lg text-gray-600 leading-relaxed text-justify">
+                        <p>
+                            WEDUMUN Organization is a dynamic project under Deniz İşleri that has been actively serving with experienced staff and officials since 2022. With a strong foundation built on the dedication and expertise of our team, we strive to create platforms where young individuals can engage in meaningful discussions, develop their skills, and expand their understanding of global affairs.
+                        </p>
+                        <p>
+                            The conferences we organize are designed to unite young individuals from Türkiye and across the globe, fostering an environment of cross-cultural dialogue and mutual understanding. Our primary goal is to provide a platform where participants can engage in meaningful discussions, exchange ideas, and develop a deeper appreciation for global issues and international cooperation.
+                        </p>
+                        <p>
+                            While our events welcome attendees from all parts of the world, we place a particular emphasis on creating opportunities for young people from the Eastern European region. This focus stems from our commitment to empowering youth from diverse backgrounds, enabling them to connect, collaborate, and contribute to shaping a more inclusive and interconnected future.
+                        </p>
+                        <p>
+                            Through these conferences, we aim to cultivate an understanding of diplomacy, multilateralism, and the importance of international organizations among young minds. By bringing together individuals with varied perspectives and experiences, we hope to inspire a generation of global leaders who will champion dialogue, collaboration, and peace.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Vision & Mission Section */}
+            {/* Vision Section */}
             <section id="vision" className="py-16 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <div className="bg-white p-8 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">{vision.title}</h3>
-                            <p className="text-gray-600 leading-relaxed">{vision.content}</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-lg shadow-lg">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">{mission.title}</h3>
-                            <p className="text-gray-600 leading-relaxed">{mission.content}</p>
-                        </div>
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="bg-white p-10 rounded-xl shadow-lg">
+                        <h3 className="text-3xl font-bold text-gray-900 mb-6">{vision.title}</h3>
+                        <p className="text-lg text-gray-600 leading-relaxed text-justify">{vision.content}</p>
                     </div>
                 </div>
             </section>
@@ -72,66 +58,21 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Our Values
+                            Support Us
                         </h2>
-                        <p className="text-lg text-gray-600">
-                            The principles that guide everything we do
-                        </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value, index) => (
-                            <div key={index} className="text-center">
-                                <div className="w-16 h-16 bg-[#2A535A] rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-white font-bold text-xl">{value.title[0]}</span>
-                                </div>
-                                <h4 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h4>
-                                <p className="text-gray-600">{value.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Previous Activities Section */}
-            <section id="activities" className="py-16 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Previous Activities
-                        </h2>
-                        <p className="text-lg text-gray-600">
-                            A showcase of our successful conferences and events
-                        </p>
-                    </div>
-
-                    <div className="space-y-8">
-                        {pastEvents.map((event, index) => (
-                            <div key={event.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                                    <div className="h-64 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg"></div>
-                                </div>
-                                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{event.title}</h3>
-                                    <p className="text-gray-600 mb-6">{event.description}</p>
-                                    <div className="grid grid-cols-3 gap-4">
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold text-[#2A535A]">{event.participants}</div>
-                                            <div className="text-sm text-gray-600">Participants</div>
-                                        </div>
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold text-[#2A535A]">{event.countries}</div>
-                                            <div className="text-sm text-gray-600">Countries</div>
-                                        </div>
-                                        <div className="text-center">
-                                            <div className="text-2xl font-bold text-[#2A535A]">
-                                                {new Date(event.date).getFullYear()}
-                                            </div>
-                                            <div className="text-sm text-gray-600">Year</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="max-w-4xl mx-auto">
+                        <div className="space-y-6 text-gray-600 leading-relaxed text-justify">
+                            <p>
+                                By contributing to our organization, you play a vital role in passing on the principles and practices of modern diplomacy to future generations. Your support directly aids in alleviating the financial challenges associated with organizing our conferences, ensuring their accessibility and success. We welcome all forms of financial assistance, including grants, sponsorships, advertisements, or direct provision of resources to meet our operational needs.
+                            </p>
+                            <p>
+                                Our organization is committed to fostering mutually beneficial partnerships, working closely with supporters to create opportunities that deliver value to both our collaborators and our target audience. It is our primary objective to provide an exceptional environment for participants, ensuring their experiences are both enriching and impactful.
+                            </p>
+                            <p>
+                                By supporting our mission, you not only contribute to the present success of our initiatives but also invest in shaping a better future. We invite you to collaborate with us and join hands in this meaningful endeavor. For further details, conditions, and an evaluation of potential partnership opportunities, please feel free to contact our General Secretariat directly. We would be delighted to explore ways to cooperate and work toward our shared goals.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

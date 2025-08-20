@@ -43,18 +43,23 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/team" className="text-gray-300 hover:text-white transition-colors">
-                                    Our Team
+                                <Link href="/staff" className="text-gray-300 hover:text-white transition-colors">
+                                    Staff
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/conferences" className="text-gray-300 hover:text-white transition-colors">
+                                    Conferences
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/events" className="text-gray-300 hover:text-white transition-colors">
-                                    Events
+                                    Upcoming Events
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-                                    Contact
+                                    Contact Us
                                 </Link>
                             </li>
                         </ul>
@@ -72,7 +77,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-                    <p>&copy; {new Date().getFullYear()} WEDUMUN. All rights reserved.</p>
+                    <p>&copy; 2025 WEDUMUN. All rights reserved.</p>
                 </div>
 
             </div>

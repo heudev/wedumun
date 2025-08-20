@@ -13,7 +13,7 @@ export default function Contact() {
                     <div className="text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
                         <p className="text-xl max-w-3xl mx-auto">
-                            Have questions about our events, want to join our team, or need more information? We would love to hear from you!
+                            Have questions about our events, want to join our staff, or need more information? We would love to hear from you!
                         </p>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ export default function Contact() {
 
                         <div className="bg-white rounded-lg shadow-md p-6">
                             <h3 className="text-lg font-semibold text-gray-900 mb-3">How can I join the WEDUMUN team?</h3>
-                            <p className="text-gray-600">We are always looking for passionate individuals to join our team. Send us your CV and a cover letter explaining your interest in Model UN and international relations.</p>
+                            <p className="text-gray-600">We are always looking for passionate individuals to join our staff. Send us your CV and a cover letter explaining your interest in Model UN and international relations.</p>
                         </div>
                     </div>
                 </div>
