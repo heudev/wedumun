@@ -14,11 +14,11 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0 flex items-center space-x-2">
                             <Image
-                                src="/file.svg"
+                                src="/logo.svg"
                                 alt="WEDUMUN Logo"
                                 width={32}
                                 height={32}
-                                className="w-8 h-8"
+                                className="w-16 h-16"
                             />
                             <span className="text-white text-xl font-bold">WEDUMUN</span>
                         </Link>

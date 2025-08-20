@@ -14,11 +14,23 @@ export const metadata: Metadata = {
   description: "Join WEDUMUN for world-class Model United Nations experiences. Develop diplomatic skills and engage with global issues through our international conferences.",
   keywords: "Model UN, MUN, diplomacy, international relations, youth conference, WEDUMUN",
   authors: [{ name: "WEDUMUN Team" }],
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "WEDUMUN - Western European Diplomatic United Nations",
     description: "Join WEDUMUN for world-class Model United Nations experiences",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 300,
+        height: 300,
+        alt: "WEDUMUN Logo",
+      },
+    ],
   },
 };
 
