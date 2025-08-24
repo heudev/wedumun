@@ -1,66 +1,58 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import organizationData from '@/data/organization.json';
 import eventsData from '@/data/events.json';
-import { formatDate } from '@/utils/dateUtils';
 
 export default function Home() {
   const { vision } = organizationData;
   const { events } = eventsData;
-  const upcomingEvents = events; // Show all upcoming events
-
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (upcomingEvents.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentEventIndex((prevIndex) =>
-          prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 4000); // Change slide every 4 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [upcomingEvents.length]);
-
-  const nextEvent = () => {
-    setCurrentEventIndex((prevIndex) =>
-      prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevEvent = () => {
-    setCurrentEventIndex((prevIndex) =>
-      prevIndex === 0 ? upcomingEvents.length - 1 : prevIndex - 1
-    );
-  };
+  const upcomingEvents = events;
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#2A535A] to-[#23484E] text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Welcome to <span className="text-blue-300">WEDUMUN</span>
+      <section className="relative h-screen overflow-hidden text-white">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ pointerEvents: 'none' }}
+          >
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+            {/* Fallback için gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2A535A] to-[#23484E]"></div>
+          </video>
+        </div>
+
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+              Welcome to <span className="text-[#2A535A]">WEDUMUN</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-lg">
               Speak now, shape tomorrow
             </p>
             <div className="space-x-4">
               <Link
                 href="/events"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                className="inline-block bg-[#2A535A] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg"
               >
                 View Events
               </Link>
               <Link
                 href="/about"
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#2A535A] font-semibold py-3 px-8 rounded-lg transition-all duration-200"
+                className="inline-block border-2 border-white text-white hover:bg-white hover:text-[#2A535A] font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-lg"
               >
                 Learn More
               </Link>
@@ -81,90 +73,40 @@ export default function Home() {
             </p>
           </div>
 
-          {upcomingEvents.length > 0 && (
-            <div className="relative max-w-4xl mx-auto">
-              {/* Event Carousel */}
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${currentEventIndex * 100}%)` }}
-                >
-                  {upcomingEvents.map((event) => (
-                    <div key={event.id} className="w-full flex-shrink-0">
-                      <div className="bg-white border border-gray-200">
-                        <div className="h-64 bg-gradient-to-br from-[#2A535A] to-[#23484E]"></div>
-                        <div className="p-8">
-                          <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">{event.title}</h3>
-                          <p className="text-gray-600 mb-6 text-center">{event.shortDescription}</p>
-
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div className="flex items-center justify-center text-gray-500">
-                              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                              {formatDate(event.date)}
-                            </div>
-                            <div className="flex items-center justify-center text-gray-500">
-                              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              {event.location}
-                            </div>
-                          </div>
-
-                          <div className="text-center">
-                            <Link
-                              href={`/events/${event.id}`}
-                              className="inline-block bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-                            >
-                              Learn More
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {upcomingEvents.map((event) => (
+              <div key={event.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 bg-gradient-to-br from-[#2A535A] to-[#23484E]"></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
+                  <p className="text-gray-600 mb-4">{event.shortDescription}</p>
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {new Date(event.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {event.location}
+                  </div>
+                  <Link
+                    href={`/events/${event.id}`}
+                    className="inline-block w-full text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </div>
-
-              {/* Navigation Arrows */}
-              {upcomingEvents.length > 1 && (
-                <>
-                  <button
-                    onClick={prevEvent}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-200"
-                  >
-                    <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={nextEvent}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-200"
-                  >
-                    <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </>
-              )}
-
-              {/* Dots Indicator */}
-              {upcomingEvents.length > 1 && (
-                <div className="flex justify-center mt-6 space-x-2">
-                  {upcomingEvents.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentEventIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-200 ${index === currentEventIndex ? 'bg-[#2A535A]' : 'bg-gray-300'
-                        }`}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
+            ))}
+          </div>
 
           <div className="text-center mt-12">
             <Link
@@ -184,7 +126,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {vision.title}
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
+            <p className="text-lg text-gray-600 max-w-6xl mx-auto text-justify">
               {vision.content}
             </p>
           </div>
@@ -223,18 +165,109 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join WEDUMUN Society Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Join WEDUMUN Society
-            </h3>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Don&apos;t miss the opportunity to gain unforgettable new experiences and make your voice heard across the globe! Sign up as a society volunteer now!
-            </p>
-          </div>
+      {/* Join WEDUMUN Community Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[#2A535A] mb-6">
+                  Join The WEMUN Community
+                </h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  Thousands of students. One shared goal: Change the world.
+                </p>
+              </div>
 
+              {/* Features List */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg text-gray-700">International Conferences</span>
+                </div>
+
+                <div className="flex items-center space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg text-gray-700">Diverse Global Network</span>
+                </div>
+
+                <div className="flex items-center space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg text-gray-700">Focus on Climate & Sustainability</span>
+                </div>
+
+                <div className="flex items-center space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg text-gray-700">Transformative Leadership Training</span>
+                </div>
+              </div>
+
+              {/* Call to Action Text */}
+              <div className="pt-4">
+                <p className="text-lg text-gray-700 mb-2">
+                  Be part of something bigger. Be part of We The People MUN.
+                </p>
+                <p className="text-lg font-semibold text-[#2A535A]">
+                  Lead today. Shape tomorrow.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/conference-crowd.jpg"
+                  alt="WEMUN Conference with hundreds of delegates"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    // Fallback to a placeholder div if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="w-full h-96 bg-gradient-to-br from-[#2A535A] to-[#23484E] flex items-center justify-center">
+                          <div class="text-white text-center">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            <p class="text-lg font-semibold">WEMUN Community</p>
+                            <p class="text-sm opacity-75">Global Conference Experience</p>
+                          </div>
+                        </div>
+                      `;
+                    }
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Join WEDUMUN Society Application Section */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <h4 className="text-xl font-semibold text-gray-900 mb-4">APPLY AS A VOLUNTEER</h4>

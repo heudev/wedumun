@@ -14,11 +14,11 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0 flex items-center space-x-2">
                             <Image
-                                src="/logo.svg"
+                                src="/esdal.png"
                                 alt="WEDUMUN Logo"
-                                width={32}
-                                height={32}
-                                className="w-16 h-16"
+                                width={1920}
+                                height={1080}
+                                className="w-15 h-15 rounded-full"
                             />
                             <span className="text-white text-xl font-bold">WEDUMUN</span>
                         </Link>
@@ -33,8 +33,16 @@ const Navbar = () => {
                             About Us
                         </Link>
                         <div className="relative group">
-                            <Link href="/staff" className="text-white hover:text-gray-300 transition-colors">
+                            <Link href="#" className="text-white hover:text-gray-300 transition-colors flex items-center">
                                 Staff
+                                <svg
+                                    className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
                             </Link>
                             <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">
                                 <Link
@@ -43,23 +51,29 @@ const Navbar = () => {
                                 >
                                     Executive
                                 </Link>
-                                <Link
-                                    href="/staff/organization"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                                <span
+                                    className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
                                 >
                                     Organization Staff
-                                </Link>
-                                <Link
-                                    href="/staff/academic"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                                </span>
+                                <span
+                                    className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
                                 >
                                     Academic Team
-                                </Link>
+                                </span>
                             </div>
                         </div>
                         <div className="relative group">
-                            <Link href="/conferences" className="text-white hover:text-gray-300 transition-colors">
+                            <Link href="#" className="text-white hover:text-gray-300 transition-colors flex items-center">
                                 Conferences
+                                <svg
+                                    className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
                             </Link>
                             <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">
                                 <Link
@@ -119,7 +133,7 @@ const Navbar = () => {
                             About Us
                         </Link>
                         <Link
-                            href="/staff"
+                            href="#"
                             className="text-white block px-3 py-2 text-base font-medium hover:bg-[#2A535A] transition-colors duration-200"
                             onClick={() => setIsOpen(false)}
                         >
@@ -132,22 +146,18 @@ const Navbar = () => {
                         >
                             - Executive
                         </Link>
-                        <Link
-                            href="/staff/organization"
-                            className="text-white block px-3 py-2 text-base font-medium hover:bg-[#2A535A] transition-colors duration-200 ml-4"
-                            onClick={() => setIsOpen(false)}
+                        <span
+                            className="text-gray-400 block px-3 py-2 text-base font-medium cursor-not-allowed ml-4"
                         >
                             - Organization Staff
-                        </Link>
-                        <Link
-                            href="/staff/academic"
-                            className="text-white block px-3 py-2 text-base font-medium hover:bg-[#2A535A] transition-colors duration-200 ml-4"
-                            onClick={() => setIsOpen(false)}
+                        </span>
+                        <span
+                            className="text-gray-400 block px-3 py-2 text-base font-medium cursor-not-allowed ml-4"
                         >
                             - Academic Team
-                        </Link>
+                        </span>
                         <Link
-                            href="/conferences"
+                            href="#"
                             className="text-white block px-3 py-2 text-base font-medium hover:bg-[#2A535A] transition-colors duration-200"
                             onClick={() => setIsOpen(false)}
                         >
