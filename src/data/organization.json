@@ -34,26 +34,29 @@
     "teamStructure": {
         "executive": [
             {
-                "name": "David Richardson",
+                "name": "Saim Sümer",
                 "position": "President",
-                "image": "/team/david.jpg",
-                "linkedin": "https://linkedin.com/in/davidrichardson",
-                "email": "president@wedumun.org",
+                "image": "https://drive.google.com/uc?export=view&id=1IXBApRUlMrNZycqzsv8X2Yq8GytfDDfJ",
+                "linkedin": ""
+            },
+            {
+                "name": "Ecem Özer",
+                "position": "Secretary-General",
+                "image": "https://drive.google.com/uc?export=view&id=1-yL6xU0WKhc4HzbBN2ufzy1yw7L3aLSm",
+                "linkedin": "",
                 "letter": "Dear Delegates and Participants,\n\nAs President of WEDUMUN, I am honored to welcome you to our growing community of young diplomats and future leaders. Our organization stands as a beacon of hope in fostering international understanding and peaceful dialogue among the youth of today.\n\nSince our founding in 2020, WEDUMUN has been committed to providing exceptional Model United Nations experiences that transcend cultural boundaries and inspire meaningful change. We believe that through diplomatic engagement, critical thinking, and collaborative problem-solving, we can prepare the next generation to tackle the complex challenges facing our interconnected world.\n\nOur vision extends beyond mere simulation of diplomatic processes. We strive to cultivate genuine understanding of international relations, global governance, and the vital role that multilateral institutions play in maintaining peace and stability. In an era where international cooperation is more crucial than ever, we are proud to contribute to the development of young minds who will shape the future of diplomacy.\n\nI invite you to join us in this transformative journey, where every voice matters and every perspective contributes to our collective wisdom.\n\nWith warm regards,\nDavid Richardson\nPresident, WEDUMUN"
             },
             {
-                "name": "Emma Thompson",
-                "position": "Secretary-General",
-                "image": "/team/emma.jpg",
-                "linkedin": "https://linkedin.com/in/emmathompson",
-                "email": "emma@wedumun.org"
+                "name": "Ceylin Akgün",
+                "position": "Director-General",
+                "image": "https://drive.google.com/uc?export=view&id=1YYJHVUcf_fBgb_6AEA1J--RWJYFVeaCu",
+                "linkedin": ""
             },
             {
-                "name": "Alexander Petrov",
+                "name": "Eren Bice",
                 "position": "Deputy Secretary-General",
-                "image": "/team/alexander.jpg",
-                "linkedin": "https://linkedin.com/in/alexanderpetrov",
-                "email": "alexander@wedumun.org"
+                "image": "https://drive.google.com/uc?export=view&id=1_iYSkFyHLzkB152t1aSVeQLmc0prSTMZ",
+                "linkedin": ""
             }
         ],
         "organizationStaff": [

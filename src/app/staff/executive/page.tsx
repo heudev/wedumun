@@ -1,31 +1,41 @@
 import organizationData from '@/data/organization.json';
+import Image from 'next/image';
 
 interface TeamMember {
     name: string;
     position: string;
     image: string;
     linkedin: string;
-    email: string;
     letter?: string;
 }
 
 export default function Executive() {
     const { teamStructure } = organizationData;
     const executiveTeam = teamStructure.executive;
-    const presidentData = executiveTeam.find(member => member.position === 'President');
+    const secretaryGeneralData = executiveTeam.find(member => member.position === 'Secretary-General');
 
     const TeamMemberCard = ({ member }: { member: TeamMember }) => (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             {/* Portrait Photo - Rectangle format like iumun.org */}
             <div className="h-80 bg-gradient-to-br from-[#2A535A] to-[#23484E] flex items-center justify-center relative overflow-hidden">
-                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                    {/* Placeholder for actual photo */}
-                    <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg">
-                        <span className="text-4xl font-bold text-[#2A535A]">
-                            {member.name.split(' ').map((n: string) => n[0]).join('')}
-                        </span>
+                {member.image && member.image.trim() !== '' ? (
+                    <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        {/* Placeholder for members without photos */}
+                        <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <span className="text-4xl font-bold text-[#2A535A]">
+                                {member.name.split(' ').map((n: string) => n[0]).join('')}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
 
             <div className="p-6 text-center">
@@ -33,15 +43,6 @@ export default function Executive() {
                 <p className="text-[#2A535A] font-semibold text-lg">{member.position}</p>
 
                 <div className="flex justify-center items-center space-x-4 mt-4">
-                    <a
-                        href={`mailto:${member.email}`}
-                        className="text-[#2A535A] hover:text-[#23484E] transition-colors"
-                        title="Email"
-                    >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                    </a>
                     <a
                         href={member.linkedin}
                         target="_blank"
@@ -72,25 +73,35 @@ export default function Executive() {
                 </div>
             </section>
 
-            {/* President's Letter Section */}
-            {presidentData && presidentData.letter && (
+            {/* Secretary-General's Letter Section */}
+            {secretaryGeneralData && secretaryGeneralData.letter && (
                 <section className="py-16 bg-gray-50">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="bg-white rounded-lg shadow-lg p-8">
                             <div className="flex items-center mb-8">
-                                <div className="w-24 h-24 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-full flex items-center justify-center mr-6">
-                                    <span className="text-2xl font-bold text-white">
-                                        {presidentData.name.split(' ').map(n => n[0]).join('')}
-                                    </span>
+                                <div className="w-24 h-24 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-full flex items-center justify-center mr-6 relative overflow-hidden">
+                                    {secretaryGeneralData.image && secretaryGeneralData.image.trim() !== '' ? (
+                                        <Image
+                                            src={secretaryGeneralData.image}
+                                            alt={secretaryGeneralData.name}
+                                            fill
+                                            className="object-cover rounded-full"
+                                            sizes="96px"
+                                        />
+                                    ) : (
+                                        <span className="text-2xl font-bold text-white">
+                                            {secretaryGeneralData.name.split(' ').map((n: string) => n[0]).join('')}
+                                        </span>
+                                    )}
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-900">{presidentData.name}</h2>
-                                    <p className="text-[#2A535A] font-semibold text-lg">{presidentData.position}</p>
+                                    <h2 className="text-2xl font-bold text-gray-900">{secretaryGeneralData.name}</h2>
+                                    <p className="text-[#2A535A] font-semibold text-lg">{secretaryGeneralData.position}</p>
                                 </div>
                             </div>
                             <div className="prose prose-lg max-w-none">
                                 <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-                                    {presidentData.letter}
+                                    {secretaryGeneralData.letter}
                                 </div>
                             </div>
                         </div>
