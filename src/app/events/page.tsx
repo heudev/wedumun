@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import eventsData from '@/data/events.json';
 import { formatDateRange, getDay, getMonthYear } from '@/utils/dateUtils';
+import { EventsData } from '@/types/events';
+import Image from 'next/image';
 
 export default function Events() {
-    const { events } = eventsData;
+    const { events }: EventsData = eventsData;
 
     return (
         <div className="min-h-screen">
@@ -26,15 +28,25 @@ export default function Events() {
                         {events.map((event, index) => (
                             <div key={event.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                                    <div className="h-80 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg flex items-center justify-center">
-                                        <div className="text-center text-white">
-                                            <div className="text-6xl font-bold mb-2">
-                                                {getDay(event.date)}
+                                    <div className="h-80 bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg flex items-center justify-center overflow-hidden">
+                                        {event.image ? (
+                                            <Image
+                                                src={event.image}
+                                                alt={event.title}
+                                                width={600}
+                                                height={320}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            <div className="text-center text-white">
+                                                <div className="text-6xl font-bold mb-2">
+                                                    {getDay(event.date)}
+                                                </div>
+                                                <div className="text-xl">
+                                                    {getMonthYear(event.date)}
+                                                </div>
                                             </div>
-                                            <div className="text-xl">
-                                                {getMonthYear(event.date)}
-                                            </div>
-                                        </div>
+                                        )}
                                     </div>
                                 </div>
                                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
@@ -62,32 +74,63 @@ export default function Events() {
                                                 <svg className="w-5 h-5 mr-3 text-[#2A535A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                                 </svg>
-                                                <span>{event.committees.length} Committees</span>
+                                                <span>
+                                                    {event.expectedDelegates ? `${event.expectedDelegates} Delegates Expected` : `${event.committees.length} Committees`}
+                                                </span>
                                             </div>
-                                            {event.registrationOpen && (
+                                            {event.registrationOpen ? (
                                                 <div className="flex items-center text-green-600">
                                                     <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                     </svg>
                                                     <span className="font-semibold">Registration Open</span>
                                                 </div>
+                                            ) : (
+                                                <div className="flex items-center text-red-600">
+                                                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span className="font-semibold">Registration Not Opened</span>
+                                                </div>
                                             )}
                                         </div>
 
                                         <div className="flex flex-col sm:flex-row gap-3">
-                                            <Link
-                                                href={`/events/${event.id}`}
-                                                className="flex-1 text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-                                            >
-                                                View Details
-                                            </Link>
-                                            {event.registrationOpen && (
-                                                <Link
-                                                    href={`/events/${event.id}#register`}
-                                                    className="flex-1 text-center border-2 border-[#2A535A] text-[#2A535A] hover:bg-[#2A535A] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                                            {event.detailsLink ? (
+                                                <a
+                                                    href={event.detailsLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex-1 text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
                                                 >
-                                                    Register Now
+                                                    View Details
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    href={`/events/${event.id}`}
+                                                    className="flex-1 text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                                                >
+                                                    View Details
                                                 </Link>
+                                            )}
+                                            {event.registrationOpen && (
+                                                event.registrationLink ? (
+                                                    <a
+                                                        href={event.registrationLink}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex-1 text-center border-2 border-[#2A535A] text-[#2A535A] hover:bg-[#2A535A] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                                                    >
+                                                        Register Now
+                                                    </a>
+                                                ) : (
+                                                    <Link
+                                                        href={`/events/${event.id}#register`}
+                                                        className="flex-1 text-center border-2 border-[#2A535A] text-[#2A535A] hover:bg-[#2A535A] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                                                    >
+                                                        Register Now
+                                                    </Link>
+                                                )
                                             )}
                                         </div>
                                     </div>

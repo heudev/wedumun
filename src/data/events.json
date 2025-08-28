@@ -1,15 +1,18 @@
 {
     "events": [
         {
-            "id": "wedumun-2025",
-            "title": "WEDUMUN 2025",
+            "id": "wedumun-2026",
+            "title": "WEDUMUN 2026",
             "shortDescription": "Annual Model United Nations Conference",
-            "longDescription": "Western European Model United Nations 2025 brings together bright minds from across the region to simulate UN committees and address global challenges through diplomatic discourse.",
-            "date": "2025-03-15",
-            "endDate": "2025-03-17",
-            "location": "Istanbul, Turkey",
-            "image": "/events/wedumun-2025.jpg",
-            "registrationOpen": true,
+            "longDescription": "Are you ready to revisit the Pearl of the Gulf? WEDUMUN is back! Better and more advanced than ever! Together with participants around the world, Turkey awaits! Don't miss this unique opportunity!",
+            "date": "2026-01-23",
+            "endDate": "2026-01-25",
+            "location": "İzmir, Türkiye",
+            "image": "https://drive.google.com/uc?export=view&id=1TQmizCyRCwJTg8KboqQvriC_gkZY-OqY",
+            "registrationOpen": false,
+            "expectedDelegates": 220,
+            "detailsLink": "",
+            "registrationLink": "",
             "committees": [
                 {
                     "name": "United Nations Security Council",
@@ -30,7 +33,7 @@
             "schedule": [
                 {
                     "day": "Day 1",
-                    "date": "2025-03-15",
+                    "date": "2026-01-23",
                     "events": [
                         {
                             "time": "09:00",
@@ -60,7 +63,7 @@
                 },
                 {
                     "day": "Day 2",
-                    "date": "2025-03-16",
+                    "date": "2026-01-24",
                     "events": [
                         {
                             "time": "09:00",
@@ -86,7 +89,7 @@
                 },
                 {
                     "day": "Day 3",
-                    "date": "2025-03-17",
+                    "date": "2026-01-25",
                     "events": [
                         {
                             "time": "09:00",
@@ -113,51 +116,115 @@
             ]
         },
         {
-            "id": "youth-summit-2025",
-            "title": "International Youth Summit 2025",
-            "shortDescription": "Empowering Young Leaders",
-            "longDescription": "A dynamic summit focused on empowering young leaders to address contemporary global challenges through innovative solutions and collaborative action.",
-            "date": "2025-05-20",
-            "endDate": "2025-05-22",
-            "location": "Ankara, Turkey",
-            "image": "/events/youth-summit-2025.jpg",
+            "id": "global-online-mun-2025",
+            "title": "Global Online MUN 2025",
+            "shortDescription": "Annual Model United Nations Conference",
+            "longDescription": "Join us for our flagship online Model United Nations conference! Connect with delegates from around the world and engage in meaningful diplomatic discussions from the comfort of your home. Don't miss this unique global opportunity!",
+            "date": "2025-09-28",
+            "endDate": "2025-09-30",
+            "location": "Online",
+            "image": "https://drive.google.com/uc?export=view&id=1RP78Dr0TNDHn9yXuuvXXJFkMyhPRz8K5",
             "registrationOpen": true,
+            "expectedDelegates": 150,
+            "detailsLink": "https://generationleadingnetwork.site/ifl2025",
+            "registrationLink": "https://generationleadingnetwork.site/ifl2025#apply",
             "committees": [
                 {
-                    "name": "Youth Council",
-                    "topic": "Digital citizenship and social media responsibility",
-                    "chair": "Maria Rodriguez"
+                    "name": "United Nations Security Council",
+                    "topic": "The situation in the Middle East",
+                    "chair": "John Smith"
                 },
                 {
-                    "name": "Innovation Committee",
-                    "topic": "Technology solutions for sustainability",
-                    "chair": "David Chen"
+                    "name": "World Health Organization",
+                    "topic": "Addressing global health inequalities",
+                    "chair": "Sarah Johnson"
+                },
+                {
+                    "name": "United Nations Environment Programme",
+                    "topic": "Climate change mitigation strategies",
+                    "chair": "Ahmed Hassan"
                 }
             ],
             "schedule": [
                 {
                     "day": "Day 1",
-                    "date": "2025-05-20",
+                    "date": "2025-09-28",
                     "events": [
                         {
-                            "time": "10:00",
-                            "activity": "Opening & Keynote Speech"
+                            "time": "09:00",
+                            "activity": "Registration & Welcome Coffee"
                         },
                         {
-                            "time": "11:30",
-                            "activity": "Workshop Sessions"
+                            "time": "10:00",
+                            "activity": "Opening Ceremony"
+                        },
+                        {
+                            "time": "11:00",
+                            "activity": "Committee Sessions Begin"
                         },
                         {
                             "time": "13:00",
-                            "activity": "Networking Lunch"
+                            "activity": "Lunch Break"
                         },
                         {
                             "time": "14:30",
-                            "activity": "Panel Discussions"
+                            "activity": "Committee Sessions Continue"
+                        },
+                        {
+                            "time": "18:00",
+                            "activity": "Day 1 Closing"
+                        }
+                    ]
+                },
+                {
+                    "day": "Day 2",
+                    "date": "2025-09-29",
+                    "events": [
+                        {
+                            "time": "09:00",
+                            "activity": "Committee Sessions"
+                        },
+                        {
+                            "time": "11:00",
+                            "activity": "Crisis Committee Updates"
+                        },
+                        {
+                            "time": "13:00",
+                            "activity": "Lunch Break"
+                        },
+                        {
+                            "time": "14:30",
+                            "activity": "Committee Sessions"
                         },
                         {
                             "time": "17:00",
-                            "activity": "Cultural Exchange Evening"
+                            "activity": "Social Event"
+                        }
+                    ]
+                },
+                {
+                    "day": "Day 3",
+                    "date": "2025-09-30",
+                    "events": [
+                        {
+                            "time": "09:00",
+                            "activity": "Final Committee Sessions"
+                        },
+                        {
+                            "time": "11:00",
+                            "activity": "Resolution Presentations"
+                        },
+                        {
+                            "time": "13:00",
+                            "activity": "Lunch Break"
+                        },
+                        {
+                            "time": "14:30",
+                            "activity": "Closing Ceremony"
+                        },
+                        {
+                            "time": "16:00",
+                            "activity": "Awards & Farewell"
                         }
                     ]
                 }

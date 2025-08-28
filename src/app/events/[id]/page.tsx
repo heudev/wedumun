@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import eventsData from '@/data/events.json';
 import { formatDateRange } from '@/utils/dateUtils';
+import { EventsData } from '@/types/events';
 
 interface EventPageProps {
     params: Promise<{
@@ -11,7 +12,7 @@ interface EventPageProps {
 
 export default async function EventPage({ params }: EventPageProps) {
     const { id } = await params;
-    const { events } = eventsData;
+    const { events }: EventsData = eventsData;
     const event = events.find(e => e.id === id);
 
     if (!event) {
@@ -174,9 +175,20 @@ export default async function EventPage({ params }: EventPageProps) {
                     </p>
                     <div className="space-x-4">
                         {event.registrationOpen ? (
-                            <button className="inline-block bg-white text-[#2A535A] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
-                                Register Now
-                            </button>
+                            event.registrationLink ? (
+                                <a
+                                    href={event.registrationLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block bg-white text-[#2A535A] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                                >
+                                    Register Now
+                                </a>
+                            ) : (
+                                <button className="inline-block bg-white text-[#2A535A] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+                                    Register Now
+                                </button>
+                            )
                         ) : (
                             <Link
                                 href="/events"
