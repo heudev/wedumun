@@ -179,18 +179,8 @@
     ],
     "contact": {
         "email": "info@wedumun.org",
-        "phone": "+90 212 555 0123",
-        "address": {
-            "street": "Diplomacy Avenue 123",
-            "city": "Istanbul",
-            "country": "Turkey",
-            "postal": "34000"
-        },
         "social": {
-            "linkedin": "https://linkedin.com/company/wedumun",
-            "twitter": "https://twitter.com/wedumun",
-            "instagram": "https://instagram.com/wedumun",
-            "facebook": "https://facebook.com/wedumun"
+            "instagram": "https://instagram.com/wedumunclub"
         }
     }
 }
