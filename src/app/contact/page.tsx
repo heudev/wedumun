@@ -76,8 +76,8 @@ export default function Contact() {
                         </div>
 
                         <div className="bg-white rounded-lg shadow-md p-6">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-3">Are there scholarships available?</h3>
-                            <p className="text-gray-600">Yes, we sometimes offer limited spots to outstanding individuals who demonstrate exceptional performance and collaboration. Follow our social media accounts and news for limited opportunities.</p>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-3">Are there funded seats available?</h3>
+                            <p className="text-gray-600">Yes, we sometimes offer limited funded seats to outstanding individuals who demonstrate exceptional performance and collaboration. Follow our social media accounts and news for limited opportunities.</p>
                         </div>
 
                         <div className="bg-white rounded-lg shadow-md p-6">

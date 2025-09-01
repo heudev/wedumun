@@ -14,21 +14,16 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden text-white">
-        {/* Background Video */}
+        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover"
+          <Image
+            src="https://drive.google.com/uc?export=view&id=1YPhsvMNutqLg0pj5RbvotDmsRq0mmmYH"
+            alt="WEDUMUN Hero Background"
+            fill
+            className="object-cover"
             style={{ pointerEvents: 'none' }}
-          >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-            {/* Fallback için gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2A535A] to-[#23484E]"></div>
-          </video>
+            priority
+          />
         </div>
 
         {/* Dark overlay for better text readability */}
@@ -76,7 +71,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {upcomingEvents.map((event) => (
               <div key={event.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 bg-gradient-to-br from-[#2A535A] to-[#23484E]"></div>
+                <div className="h-48 relative overflow-hidden">
+                  <Image
+                    src={event.image}
+                    alt={event.title}
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      // Fallback to gradient if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.className = 'h-48 bg-gradient-to-br from-[#2A535A] to-[#23484E]';
+                      }
+                    }}
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
                   <p className="text-gray-600 mb-4">{event.shortDescription}</p>
@@ -97,12 +108,32 @@ export default function Home() {
                     </svg>
                     {event.location}
                   </div>
-                  <Link
-                    href={`/events/${event.id}`}
-                    className="inline-block w-full text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
-                  >
-                    Learn More
-                  </Link>
+                  {event.committees && event.committees.length > 0 && event.schedule && event.schedule.length > 0 ? (
+                    event.detailsLink && event.detailsLink.trim() !== "" ? (
+                      <a
+                        href={event.detailsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                      >
+                        Learn More
+                      </a>
+                    ) : (
+                      <Link
+                        href={`/events/${event.id}`}
+                        className="inline-block w-full text-center bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                      >
+                        Learn More
+                      </Link>
+                    )
+                  ) : (
+                    <button
+                      disabled
+                      className="inline-block w-full text-center bg-gray-400 text-gray-300 font-semibold py-2 px-4 rounded cursor-not-allowed"
+                    >
+                      Coming Soon
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -173,10 +204,10 @@ export default function Home() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[#2A535A] mb-6">
-                  Join The WEMUN Community
+                  Be a Part of Our Team
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Thousands of students. One shared goal: Change the world.
+                  Ever interested in being a part of our team? Create your own opportunity today!
                 </p>
               </div>
 
@@ -188,7 +219,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-lg text-gray-700">International Conferences</span>
+                  <span className="text-lg text-gray-700">Attending International Conferences</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
@@ -197,7 +228,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-lg text-gray-700">Diverse Global Network</span>
+                  <span className="text-lg text-gray-700">Acquiring a Global Network</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
@@ -206,7 +237,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-lg text-gray-700">Focus on Climate & Sustainability</span>
+                  <span className="text-lg text-gray-700">Community Organizing</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
@@ -215,17 +246,14 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-lg text-gray-700">Transformative Leadership Training</span>
+                  <span className="text-lg text-gray-700">Get to know different cultures</span>
                 </div>
               </div>
 
               {/* Call to Action Text */}
               <div className="pt-4">
-                <p className="text-lg text-gray-700 mb-2">
-                  Be part of something bigger. Be part of We The People MUN.
-                </p>
                 <p className="text-lg font-semibold text-[#2A535A]">
-                  Lead today. Shape tomorrow.
+                  Speak now, change tomorrow!
                 </p>
               </div>
             </div>
@@ -234,7 +262,7 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="/conference-crowd.jpg"
+                  src="https://drive.google.com/uc?export=view&id=1GwC0unDctZfl7UhRytM9zPSzmPMAObDB"
                   alt="WEMUN Conference with hundreds of delegates"
                   width={600}
                   height={400}
@@ -272,23 +300,23 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <h4 className="text-xl font-semibold text-gray-900 mb-4">APPLY AS A VOLUNTEER</h4>
               <p className="text-gray-600 mb-6">Be a part of our organization and step into the world of diplomacy!</p>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+              <button
+                disabled
+                className="inline-block bg-gray-400 text-gray-300 font-semibold py-3 px-8 rounded-lg cursor-not-allowed"
               >
                 Apply Now
-              </Link>
+              </button>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <h4 className="text-xl font-semibold text-gray-900 mb-4">APPLY AS A MEMBER</h4>
               <p className="text-gray-600 mb-6">Become a WEDUMUN Member to not miss the latest updates announcements!</p>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#2A535A] hover:bg-[#23484E] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+              <button
+                disabled
+                className="inline-block bg-gray-400 text-gray-300 font-semibold py-3 px-8 rounded-lg cursor-not-allowed"
               >
                 Join Now
-              </Link>
+              </button>
             </div>
           </div>
         </div>

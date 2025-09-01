@@ -1,121 +1,6 @@
 {
     "events": [
         {
-            "id": "wedumun-2026",
-            "title": "WEDUMUN 2026",
-            "shortDescription": "Annual Model United Nations Conference",
-            "longDescription": "Are you ready to revisit the Pearl of the Gulf? WEDUMUN is back! Better and more advanced than ever! Together with participants around the world, Turkey awaits! Don't miss this unique opportunity!",
-            "date": "2026-01-23",
-            "endDate": "2026-01-25",
-            "location": "İzmir, Türkiye",
-            "image": "https://drive.google.com/uc?export=view&id=1TQmizCyRCwJTg8KboqQvriC_gkZY-OqY",
-            "registrationOpen": false,
-            "expectedDelegates": 220,
-            "detailsLink": "",
-            "registrationLink": "",
-            "committees": [
-                {
-                    "name": "United Nations Security Council",
-                    "topic": "The situation in the Middle East",
-                    "chair": "John Smith"
-                },
-                {
-                    "name": "World Health Organization",
-                    "topic": "Addressing global health inequalities",
-                    "chair": "Sarah Johnson"
-                },
-                {
-                    "name": "United Nations Environment Programme",
-                    "topic": "Climate change mitigation strategies",
-                    "chair": "Ahmed Hassan"
-                }
-            ],
-            "schedule": [
-                {
-                    "day": "Day 1",
-                    "date": "2026-01-23",
-                    "events": [
-                        {
-                            "time": "09:00",
-                            "activity": "Registration & Welcome Coffee"
-                        },
-                        {
-                            "time": "10:00",
-                            "activity": "Opening Ceremony"
-                        },
-                        {
-                            "time": "11:00",
-                            "activity": "Committee Sessions Begin"
-                        },
-                        {
-                            "time": "13:00",
-                            "activity": "Lunch Break"
-                        },
-                        {
-                            "time": "14:30",
-                            "activity": "Committee Sessions Continue"
-                        },
-                        {
-                            "time": "18:00",
-                            "activity": "Day 1 Closing"
-                        }
-                    ]
-                },
-                {
-                    "day": "Day 2",
-                    "date": "2026-01-24",
-                    "events": [
-                        {
-                            "time": "09:00",
-                            "activity": "Committee Sessions"
-                        },
-                        {
-                            "time": "11:00",
-                            "activity": "Crisis Committee Updates"
-                        },
-                        {
-                            "time": "13:00",
-                            "activity": "Lunch Break"
-                        },
-                        {
-                            "time": "14:30",
-                            "activity": "Committee Sessions"
-                        },
-                        {
-                            "time": "17:00",
-                            "activity": "Social Event"
-                        }
-                    ]
-                },
-                {
-                    "day": "Day 3",
-                    "date": "2026-01-25",
-                    "events": [
-                        {
-                            "time": "09:00",
-                            "activity": "Final Committee Sessions"
-                        },
-                        {
-                            "time": "11:00",
-                            "activity": "Resolution Presentations"
-                        },
-                        {
-                            "time": "13:00",
-                            "activity": "Lunch Break"
-                        },
-                        {
-                            "time": "14:30",
-                            "activity": "Closing Ceremony"
-                        },
-                        {
-                            "time": "16:00",
-                            "activity": "Awards & Farewell"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "global-online-mun-2025",
             "title": "Global Online MUN 2025",
             "shortDescription": "Annual Model United Nations Conference",
@@ -123,7 +8,7 @@
             "date": "2025-09-28",
             "endDate": "2025-09-30",
             "location": "Online",
-            "image": "https://drive.google.com/uc?export=view&id=1RP78Dr0TNDHn9yXuuvXXJFkMyhPRz8K5",
+            "image": "https://drive.google.com/uc?export=view&id=1_X5o60fHbwPUh-xbbvYwPFMCGVivw04A",
             "registrationOpen": true,
             "expectedDelegates": 150,
             "detailsLink": "https://generationleadingnetwork.site/ifl2025",
@@ -229,6 +114,22 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "wedumun-2026",
+            "title": "WEDUMUN 2026",
+            "shortDescription": "Annual Model United Nations Conference",
+            "longDescription": "Are you ready to revisit the Pearl of the Gulf? WEDUMUN is back! Better and more advanced than ever! Together with participants around the world, Turkey awaits! Don't miss this unique opportunity!",
+            "date": "2026-01-23",
+            "endDate": "2026-01-25",
+            "location": "İzmir, Türkiye",
+            "image": "https://drive.google.com/uc?export=view&id=1rSxYJahU9DFnQs5G09BHtUgU4rpOW6jx",
+            "registrationOpen": false,
+            "expectedDelegates": 220,
+            "detailsLink": "",
+            "registrationLink": "",
+            "committees": [],
+            "schedule": []
         }
     ],
     "pastEvents": [
