@@ -34,7 +34,7 @@ export default function About() {
                             <div className="order-2 lg:order-1">
                                 <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        src="https://drive.google.com/uc?export=view&id=1-Z0CBlMqFwIHR6sMagzIt93A_qNwobQg"
                                         alt="Team collaboration"
                                         width={800}
                                         height={256}
@@ -63,7 +63,7 @@ export default function About() {
                             <div>
                                 <div className="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        src="https://drive.google.com/uc?export=view&id=1GwC0unDctZfl7UhRytM9zPSzmPMAObDB"
                                         alt="Global cooperation"
                                         width={800}
                                         height={256}
@@ -74,48 +74,25 @@ export default function About() {
                         </div>
                     </div>
 
-                    {/* Third Section - Eastern European Focus */}
-                    <div className="mb-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div className="order-2 lg:order-1">
-                                <div className="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-2xl">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        alt="European cooperation"
-                                        width={800}
-                                        height={256}
-                                        className="w-full h-64 object-cover rounded-xl shadow-lg"
-                                    />
-                                </div>
-                            </div>
-                            <div className="order-1 lg:order-2">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Focus on Eastern European Youth</h3>
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    While our events welcome attendees from all parts of the world, we place a particular emphasis on creating opportunities for young people from the Eastern European region. This focus stems from our commitment to empowering youth from diverse backgrounds, enabling them to connect, collaborate, and contribute to shaping a more inclusive and interconnected future.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
                     {/* Fourth Section - Diplomacy & Leadership */}
                     <div>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Cultivating Future Leaders</h3>
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    Through these conferences, we aim to cultivate an understanding of diplomacy, multilateralism, and the importance of international organizations among young minds. By bringing together individuals with varied perspectives and experiences, we hope to inspire a generation of global leaders who will champion dialogue, collaboration, and peace.
-                                </p>
-                            </div>
-                            <div>
+                            <div className="order-1 lg:order-1">
                                 <div className="bg-gradient-to-br from-amber-50 to-orange-100 p-8 rounded-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        src="https://drive.google.com/uc?export=view&id=1G1R3eWPv5LYjbnBE3wnK6vpcN8njHFlJ"
                                         alt="Conference and diplomacy"
                                         width={800}
                                         height={256}
                                         className="w-full h-64 object-cover rounded-xl shadow-lg"
                                     />
                                 </div>
+                            </div>
+                            <div className="order-2 lg:order-2">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Cultivating Future Leaders</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Through these conferences, we aim to cultivate an understanding of diplomacy, multilateralism, and the importance of international organizations among young minds. By bringing together individuals with varied perspectives and experiences, we hope to inspire a generation of global leaders who will champion dialogue, collaboration, and peace.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -184,7 +161,7 @@ export default function About() {
                             <div className="order-2 lg:order-1">
                                 <div className="bg-gradient-to-br from-rose-50 to-pink-100 p-8 rounded-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        src="https://drive.google.com/uc?export=view&id=1zRHKg-Q1bWEJzDibdYcijugsVN0LsGmF"
                                         alt="Mutual partnership"
                                         width={800}
                                         height={256}
@@ -216,7 +193,7 @@ export default function About() {
                             <div>
                                 <div className="bg-gradient-to-br from-emerald-50 to-teal-100 p-8 rounded-2xl">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        src="https://drive.google.com/uc?export=view&id=1Zdel7t0aMOBR0IhTVe6Wu1ziNlg9gQvg"
                                         alt="Future leaders"
                                         width={800}
                                         height={256}

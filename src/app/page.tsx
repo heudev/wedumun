@@ -262,7 +262,7 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://drive.google.com/uc?export=view&id=1GwC0unDctZfl7UhRytM9zPSzmPMAObDB"
+                  src="https://drive.google.com/uc?export=view&id=1bmYdc73D26-B4CuETRnNdD_oqi4bn4Wq"
                   alt="WEMUN Conference with hundreds of delegates"
                   width={600}
                   height={400}
