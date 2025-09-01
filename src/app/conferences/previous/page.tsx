@@ -1,53 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PreviousConferencesPage() {
     const previousConferences = [
         {
             id: 1,
-            title: "WEDUMUN 2024",
-            date: "March 15-17, 2024",
-            location: "Istanbul, Turkey",
-            participants: 250,
-            committees: 8,
-            description: "Our flagship annual conference featuring diverse committees and delegates from across Europe. Distinguished by various committees and intensive negotiation sessions.",
-            image: "/api/placeholder/400/300",
+            title: "ESDALMUN 2025",
+            date: "2025",
+            location: "Katip Çelebi University, Izmir Türkiye",
+            participants: 260,
+            committees: 5,
+            description: "Together applications from all over the world and unique committees, WEDUMN's first annual conference, ESDALMUN 2025, was held at Izmir Katip Çelebi University. With the magnificent Izmir Gulf Ferry Tour social!",
+            image: "https://drive.google.com/uc?export=view&id=15NZHKIl2xz0g1e4Zvx6MSlOZPrzuadQP",
             highlights: [
-                "8 specialized committees",
-                "250+ international delegates",
-                "3-day intensive sessions",
-                "Cultural exchange program"
-            ]
-        },
-        {
-            id: 2,
-            title: "WEDUMUN Youth Summit 2023",
-            date: "November 10-12, 2023",
-            location: "Ankara, Turkey",
-            participants: 180,
-            committees: 6,
-            description: "A special youth-focused conference addressing global challenges and sustainable development issues.",
-            image: "/api/placeholder/400/300",
-            highlights: [
-                "6 dynamic committees",
-                "180 young delegates",
-                "Sustainability focus",
-                "Leadership workshops"
-            ]
-        },
-        {
-            id: 3,
-            title: "WEDUMUN Regional Conference 2023",
-            date: "June 8-10, 2023",
-            location: "Izmir, Turkey",
-            participants: 120,
-            committees: 4,
-            description: "A regional conference bringing together delegates from Western Turkey and neighboring regions.",
-            image: "/api/placeholder/400/300",
-            highlights: [
-                "4 specialized committees",
-                "120 regional delegates",
-                "Cross-cultural dialogue",
-                "Diplomatic simulation"
+                "5 specialized committees",
+                "260+ participants",
+                "Experiencing modern political atmosphere",
+                "Free Izmir Gulf Ferry Social Event"
             ]
         }
     ];
@@ -68,42 +37,9 @@ export default function PreviousConferencesPage() {
                 </div>
             </section>
 
-            {/* İstatistikler Bölümü */}
-            <section className="py-16 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                        <div className="bg-gray-50 rounded-lg p-6">
-                            <div className="text-3xl font-bold text-[#2A535A] mb-2">3</div>
-                            <div className="text-gray-600">Conferences Held</div>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-6">
-                            <div className="text-3xl font-bold text-[#2A535A] mb-2">550+</div>
-                            <div className="text-gray-600">Total Participants</div>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-6">
-                            <div className="text-3xl font-bold text-[#2A535A] mb-2">18</div>
-                            <div className="text-gray-600">Committees</div>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-6">
-                            <div className="text-3xl font-bold text-[#2A535A] mb-2">15+</div>
-                            <div className="text-gray-600">Countries</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Konferans Listesi */}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            Our Conference History
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            A journey through our successful Model UN conferences
-                        </p>
-                    </div>
-
                     <div className="space-y-12">
                         {previousConferences.map((conference, index) => (
                             <div
@@ -111,13 +47,14 @@ export default function PreviousConferencesPage() {
                                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
                             >
                                 <div className="lg:w-1/2">
-                                    <div className="bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg h-64 flex items-center justify-center text-white">
-                                        <div className="text-center">
-                                            <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                            </svg>
-                                            <span className="text-lg font-semibold">Conference Image</span>
-                                        </div>
+                                    <div className="rounded-lg h-64 overflow-hidden shadow-lg relative">
+                                        <Image
+                                            src={conference.image}
+                                            alt={`${conference.title} Conference`}
+                                            fill
+                                            className="object-cover hover:scale-105 transition-transform duration-300"
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                        />
                                     </div>
                                 </div>
                                 <div className="lg:w-1/2">
@@ -187,14 +124,22 @@ export default function PreviousConferencesPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[1, 2, 3, 4, 5, 6].map((item) => (
-                            <div key={item} className="bg-gradient-to-br from-[#2A535A] to-[#23484E] rounded-lg h-48 flex items-center justify-center text-white">
-                                <div className="text-center">
-                                    <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    <span className="text-sm">Conference Photo {item}</span>
-                                </div>
+                        {[
+                            "https://drive.google.com/uc?export=view&id=1-Z0CBlMqFwIHR6sMagzIt93A_qNwobQg",
+                            "https://drive.google.com/uc?export=view&id=1GwC0unDctZfl7UhRytM9zPSzmPMAObDB",
+                            "https://drive.google.com/uc?export=view&id=1zRHKg-Q1bWEJzDibdYcijugsVN0LsGmF",
+                            "https://drive.google.com/uc?export=view&id=1Zdel7t0aMOBR0IhTVe6Wu1ziNlg9gQvg",
+                            "https://drive.google.com/uc?export=view&id=1WVrmAGVnfIipHdXNrbujvDC65JD7fyW1",
+                            "https://drive.google.com/uc?export=view&id=1G1R3eWPv5LYjbnBE3wnK6vpcN8njHFlJ"
+                        ].map((imageUrl, index) => (
+                            <div key={index} className="rounded-lg h-48 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <Image
+                                    src={imageUrl}
+                                    alt={`Conference moment ${index + 1}`}
+                                    width={1920}
+                                    height={1080}
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                />
                             </div>
                         ))}
                     </div>

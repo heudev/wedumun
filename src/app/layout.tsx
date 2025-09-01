@@ -10,22 +10,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WEDUMUN - Western European Diplomatic United Nations",
+  title: "WEDUMUN - World - Educational Simulation of Diplomacy and Leadership Model United Nations",
   description: "Join WEDUMUN for world-class Model United Nations experiences. Develop diplomatic skills and engage with global issues through our international conferences.",
   keywords: "Model UN, MUN, diplomacy, international relations, youth conference, WEDUMUN",
   authors: [{ name: "WEDUMUN Team" }],
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
-    title: "WEDUMUN - Western European Diplomatic United Nations",
+    title: "WEDUMUN - World - Educational Simulation of Diplomacy and Leadership Model United Nations",
     description: "Join WEDUMUN for world-class Model United Nations experiences",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "/logo.svg",
+        url: "/icon.png",
         width: 300,
         height: 300,
         alt: "WEDUMUN Logo",
