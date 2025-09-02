@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wedumun.com'),
   title: "WEDUMUN - World - Educational Simulation of Diplomacy and Leadership Model United Nations",
   description: "Join WEDUMUN for world-class Model United Nations experiences. Develop diplomatic skills and engage with global issues through our international conferences.",
   keywords: "Model UN, MUN, diplomacy, international relations, youth conference, WEDUMUN",

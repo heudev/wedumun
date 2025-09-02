@@ -46,18 +46,19 @@ export default function PreviousConferencesPage() {
                                 key={conference.id}
                                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
                             >
-                                <div className="lg:w-1/2">
-                                    <div className="rounded-lg h-64 overflow-hidden shadow-lg relative">
+                                <div className="w-full lg:w-1/2">
+                                    <div className="rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden shadow-lg relative">
                                         <Image
                                             src={conference.image}
                                             alt={`${conference.title} Conference`}
                                             fill
                                             className="object-cover hover:scale-105 transition-transform duration-300"
-                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
+                                            priority
                                         />
                                     </div>
                                 </div>
-                                <div className="lg:w-1/2">
+                                <div className="w-full lg:w-1/2">
                                     <div className="bg-white rounded-lg shadow-lg p-8">
                                         <h3 className="text-2xl font-bold text-gray-900 mb-3">
                                             {conference.title}
@@ -123,7 +124,7 @@ export default function PreviousConferencesPage() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {[
                             "https://drive.google.com/uc?export=view&id=1-Z0CBlMqFwIHR6sMagzIt93A_qNwobQg",
                             "https://drive.google.com/uc?export=view&id=1GwC0unDctZfl7UhRytM9zPSzmPMAObDB",
@@ -132,13 +133,14 @@ export default function PreviousConferencesPage() {
                             "https://drive.google.com/uc?export=view&id=1WVrmAGVnfIipHdXNrbujvDC65JD7fyW1",
                             "https://drive.google.com/uc?export=view&id=1G1R3eWPv5LYjbnBE3wnK6vpcN8njHFlJ"
                         ].map((imageUrl, index) => (
-                            <div key={index} className="rounded-lg h-48 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div key={index} className="rounded-lg h-40 sm:h-48 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <Image
                                     src={imageUrl}
                                     alt={`Conference moment ${index + 1}`}
                                     width={1920}
                                     height={1080}
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                             </div>
                         ))}
