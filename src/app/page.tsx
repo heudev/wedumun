@@ -17,7 +17,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <Image
-            src="https://drive.google.com/uc?export=view&id=1YPhsvMNutqLg0pj5RbvotDmsRq0mmmYH"
+            src="https://drive.google.com/uc?export=view&id=11hDw_FP6mV7eb9MpA1_gbHidxne9tOna"
             alt="WEDUMUN Hero Background"
             fill
             className="object-cover"
