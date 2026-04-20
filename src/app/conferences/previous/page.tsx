@@ -20,6 +20,23 @@ export default function PreviousConferencesPage() {
             ]
         }
     ];
+ {
+            id: 1,
+            title: "ESDALMUN 2025",
+            date: "2025",
+            location: "Katip Çelebi University, Izmir Türkiye",
+            participants: 260,
+            committees: 5,
+            description: "Together applications from all over the world and unique committees, WEDUMN's first annual conference, ESDALMUN 2025, was held at Izmir Katip Çelebi University. With the magnificent Izmir Gulf Ferry Tour social!",
+            image: "https://drive.google.com/uc?export=view&id=15NZHKIl2xz0g1e4Zvx6MSlOZPrzuadQP",
+            highlights: [
+                "5 specialized committees",
+                "260+ participants",
+                "Experiencing modern political atmosphere",
+                "Free Izmir Gulf Ferry Social Event"
+            ]
+        }
+    ];
 
     return (
         <div className="min-h-screen bg-gray-50">
