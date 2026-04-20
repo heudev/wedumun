@@ -21,7 +21,7 @@ export default function PreviousConferencesPage() {
         }
     ];
  {
-            id: 1,
+            id: 2,
             title: "ESDALMUN 2025",
             date: "2025",
             location: "Katip Çelebi University, Izmir Türkiye",
